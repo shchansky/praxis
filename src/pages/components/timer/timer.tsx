@@ -20,7 +20,6 @@ export const Timer = () => {
     if (timer.current) {
       clearInterval(timer.current);
     }
-    
   };
 
   React.useEffect(() => {
