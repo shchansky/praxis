@@ -1,31 +1,42 @@
 import React from "react";
 
 export const Timer = () => {
-  const [count, setCount] = React.useState<number>(0);
+  const [counter, setCounter] = React.useState<number>(0);
 
-  const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+  const timer = React.useRef<NodeJS.Timer | null>(null);
+
+  const startTimer = () => {
+    timer.current = setInterval(() => setCounter((prev) => prev + 1), 1000);
+  };
+
+  const stopTimer = () => {
+    if (timer.current) {
+      clearInterval(timer.current);
+    }
+  };
+
+  const clearTimer = () => {
+    setCounter(0);
+    if (timer.current) {
+      clearInterval(timer.current);
+    }
+    
+  };
 
   React.useEffect(() => {
-    const button = buttonRef.current;
-
-    const counter = setInterval(() => {
-      setCount((perv) => perv + 1);
-    }, 2000);
-
-    button?.addEventListener("click", () => clearTimeout(counter));
-
     return () => {
-      clearTimeout(counter);
-
-      button?.removeEventListener("click", () => clearTimeout(counter));
+      clearTimer();
+      timer.current = null;
     };
   }, []);
 
   return (
     <>
       <h2>Timer</h2>
-      <div>{count}</div>
-      <button ref={buttonRef}>Stop</button>
+      <div>{counter}</div>
+      <button onClick={startTimer}>Start</button>
+      <button onClick={stopTimer}>Stop</button>
+      <button onClick={clearTimer}>ClearTimer</button>
     </>
   );
 };
