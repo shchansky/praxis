@@ -6,7 +6,7 @@ export const Timer = () => {
   const timer = React.useRef<NodeJS.Timer | null>(null);
 
   const startTimer = () => {
-    timer.current = setInterval(() => setCounter((prev) => prev + 1), 1000);
+    timer.current = setInterval(() => setCounter((prev) => prev + 1), 500);
   };
 
   const stopTimer = () => {
@@ -30,12 +30,12 @@ export const Timer = () => {
   }, []);
 
   return (
-    <>
-      <h2>Timer</h2>
+    <div className="components__timer" >
+      <h3 style={{margin: "0", paddingBottom:"20px"}}>Timer</h3>
       <div>{counter}</div>
       <button onClick={startTimer}>Start</button>
       <button onClick={stopTimer}>Stop</button>
       <button onClick={clearTimer}>ClearTimer</button>
-    </>
+    </div>
   );
 };
