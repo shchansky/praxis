@@ -4,9 +4,9 @@ import * as Pages from "../pages";
 function App() {
   return (
     <div className="App">
-      <Pages.Async />
-      <hr/>
-      <Pages.Timer/>
+      <Pages.RecursiveRequest />
+      <hr />
+      <Pages.Timer />
     </div>
   );
 }
