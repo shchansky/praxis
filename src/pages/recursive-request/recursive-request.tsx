@@ -12,17 +12,23 @@ export const RecursiveRequest = () => {
 
   const abortController = new AbortController();
 
-  const loadDataById = async (id: number = 1): Promise<Request> => {
-    const request = await fetch(
-      `https://jsonplaceholder.typicode.com/todos/${id}`,
-      { signal: abortController.signal }
-    ).then((res) => res.json());
+  const loadDataById = async (id: number = 1): Promise<Request | void> => {
+    try {
+      const request = await fetch(
+        `https://jsonplaceholder.typicode.com/todos/${id}`,
+        { signal: abortController.signal }
+      );
 
-    const res: Promise<Request> = await request;
+      const res: Request = await request.json();
 
-    setState((state) => [...state, JSON.stringify(res)]);
+      setState((state) => {
+        return [...state, JSON.stringify(res)];
+      });
 
-    return res;
+      return res;
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const intervalTimer = React.useRef<ReturnType<typeof setInterval> | null>(
