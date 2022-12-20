@@ -7,6 +7,8 @@ function App() {
       <Pages.RecursiveRequest />
       <hr />
       <Pages.Timer />
+      <hr />
+      <Pages.FetchAbortController />
     </div>
   );
 }
