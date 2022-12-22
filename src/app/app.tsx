@@ -9,6 +9,8 @@ function App() {
       <Pages.Timer />
       <hr />
       <Pages.FetchAbortController />
+      <hr />
+      <Pages.Oop/>
     </div>
   );
 }
