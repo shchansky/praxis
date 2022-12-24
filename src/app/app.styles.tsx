@@ -8,12 +8,17 @@ export const Main = styled.main`
 
 export const Header = styled.h1``;
 
-export const Content = styled.div`
+export const Body = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
   display: grid;
   grid-template-columns: 200px 1fr;
 `;
+
+export const Content= styled.div`
+
+
+`
 
 export const Sidebar = styled.aside``;

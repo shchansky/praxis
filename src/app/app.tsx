@@ -9,9 +9,9 @@ function App() {
       <GlobalStyle />
       <Markup.Main className="App">
         <Markup.Header>Header</Markup.Header>
-        <Markup.Content>
+        <Markup.Body>
           <Markup.Sidebar>Sidebar</Markup.Sidebar>
-          <div>
+          <Markup.Content>
             <Pages.RecursiveRequest />
             <hr />
             <Pages.Timer />
@@ -20,8 +20,8 @@ function App() {
             <hr />
             <Pages.Oop />
             <Pages.Main />
-          </div>
-        </Markup.Content>
+          </Markup.Content>
+        </Markup.Body>
       </Markup.Main>
     </>
   );
