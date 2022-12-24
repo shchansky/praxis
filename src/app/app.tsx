@@ -1,17 +1,24 @@
 import React from "react";
 import * as Pages from "../pages";
+import { GlobalStyle } from "./app.global-styles";
+import * as Markup from "./app.styles";
 
 function App() {
   return (
-    <div className="App">
-      <Pages.RecursiveRequest />
+    <>
+      <GlobalStyle />
+      <Markup.Container className="App">
+        {/* <Pages.RecursiveRequest />
       <hr />
       <Pages.Timer />
       <hr />
       <Pages.FetchAbortController />
       <hr />
-      <Pages.Oop/>
-    </div>
+      <Pages.Oop/> */}
+
+        <Pages.Main />
+      </Markup.Container>
+    </>
   );
 }
 
