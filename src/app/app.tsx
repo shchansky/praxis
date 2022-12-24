@@ -7,17 +7,22 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Markup.Container className="App">
-        {/* <Pages.RecursiveRequest />
-      <hr />
-      <Pages.Timer />
-      <hr />
-      <Pages.FetchAbortController />
-      <hr />
-      <Pages.Oop/> */}
-
-        <Pages.Main />
-      </Markup.Container>
+      <Markup.Main className="App">
+        <Markup.Header>Header</Markup.Header>
+        <Markup.Content>
+          <Markup.Sidebar>Sidebar</Markup.Sidebar>
+          <div>
+            <Pages.RecursiveRequest />
+            <hr />
+            <Pages.Timer />
+            <hr />
+            <Pages.FetchAbortController />
+            <hr />
+            <Pages.Oop />
+            <Pages.Main />
+          </div>
+        </Markup.Content>
+      </Markup.Main>
     </>
   );
 }

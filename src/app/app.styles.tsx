@@ -1,7 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Main = styled.main`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 `;
+
+export const Header = styled.h1``;
+
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+`;
+
+export const Sidebar = styled.aside``;
