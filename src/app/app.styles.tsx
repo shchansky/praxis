@@ -16,9 +16,19 @@ export const Body = styled.div`
   grid-template-columns: 200px 1fr;
 `;
 
-export const Content= styled.div`
+export const Content = styled.div``;
 
+export const Sidebar = styled.aside`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
-`
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
-export const Sidebar = styled.aside``;
+  .active {
+    color: red;
+  }
+`;

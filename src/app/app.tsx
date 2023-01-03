@@ -1,5 +1,6 @@
 import React from "react";
 import * as Pages from "../pages";
+import { Route, Routes, NavLink } from "react-router-dom";
 import { GlobalStyle } from "./app.global-styles";
 import * as Markup from "./app.styles";
 
@@ -10,16 +11,25 @@ function App() {
       <Markup.Main className="App">
         <Markup.Header>Header</Markup.Header>
         <Markup.Body>
-          <Markup.Sidebar>Sidebar</Markup.Sidebar>
+          <Markup.Sidebar>
+            <NavLink to="/api">Api</NavLink>
+            <NavLink to="/componenets">Components</NavLink>
+          </Markup.Sidebar>
           <Markup.Content>
-            <Pages.RecursiveRequest />
+            <Routes>
+              <Route path={"/api"} element={<Pages.Api />} />
+              <Route path={"/"} element={<Pages.Api />} />
+
+              <Route path={"/componenets"} element={<Pages.Components />} />
+            </Routes>
+
+            {/* <Pages.RecursiveRequest />
             <hr />
             <Pages.Timer />
             <hr />
             <Pages.FetchAbortController />
             <hr />
-            <Pages.Oop />
-            <Pages.Main />
+            <Pages.Oop /> */}
           </Markup.Content>
         </Markup.Body>
       </Markup.Main>
