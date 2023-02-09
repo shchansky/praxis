@@ -26,6 +26,7 @@ export const FetchAbortController = () => {
       .then((res) => setContent([...content, JSON.stringify(res)]))
       .catch((err) => setContent([...content, JSON.stringify(err)]));
 
+    /** Обязательно обрываем вызов после размонтироания компонента */
     return () => abortController.abort();
     // eslint-disable-next-line
   }, [page]);
